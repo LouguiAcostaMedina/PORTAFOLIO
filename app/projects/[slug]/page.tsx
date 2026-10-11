@@ -5,8 +5,6 @@ import { getProjectBySlug, getAllProjectSlugs } from "@/data/projects";
 import { GithubIcon, ExternalLinkIcon } from "@/components/ui/icons";
 import {
   ArrowLeft,
-  Server,
-  Code2,
   CheckCircle2,
   Cpu,
   Layers,
@@ -18,6 +16,9 @@ import {
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
+
+// Deshabilita la generación dinámica en tiempo de petición: solo los slugs publicados existen
+export const dynamicParams = false;
 
 // Genera rutas estáticas exclusivamente para proyectos con published: true
 export async function generateStaticParams() {
