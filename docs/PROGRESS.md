@@ -1,0 +1,21 @@
+# Progreso de Implementación — Portafolio Andre Acosta
+
+Estado: En curso
+Rama de trabajo: `feature/portfolio-redesign-acosta`
+
+## Matriz de Fases
+
+| Fase | Descripción | Estado | Validación |
+| :--- | :--- | :--- | :--- |
+| **Fase 0** | Comprobar workspace, git, auditoría de proyectos | **COMPLETADA** | Workspace vacío analizado, rama creada, `docs/PROJECT_AUDIT.md` redactado con datos reales. |
+| **Fase 1** | Inicialización Next.js, TS, Tailwind, ESLint, layout base | **PENDIENTE** | - |
+| **Fase 2** | Sistema de diseño, tokens, dark/light mode, header, hero | **PENDIENTE** | - |
+| **Fase 3** | Modelo de datos tipado, catálogo y tarjetas de proyectos | **PENDIENTE** | - |
+| **Fase 4** | Estudios de caso dinámicos (Kerigma, HIS UPeU, guard 404 FinaTrack) | **PENDIENTE** | - |
+| **Fase 5** | Contenido complementario (Sobre mí, Stack, Proceso, Contacto, Footer) | **PENDIENTE** | - |
+| **Fase 6** | Mejoras UX/UI, animaciones, accesibilidad y responsive | **PENDIENTE** | - |
+| **Fase 7** | Testing, validación de rutas, lint, typecheck, build de producción | **PENDIENTE** | - |
+| **Fase 8** | Documentación de entrega y preparación para Vercel | **PENDIENTE** | - |
+
+## Registro de Cambios
+- **Fase 0**: Verificación de herramientas de entorno (Node v22.16.0, npm 11.5.2, Git). Creación de rama de trabajo `feature/portfolio-redesign-acosta`. Auditoría remota de repositorios GitHub de Kerigma (frontend y backend), HIS UPeU y estado de FinaTrack. Creación de `docs/PROJECT_AUDIT.md` y `docs/PROGRESS.md`.
