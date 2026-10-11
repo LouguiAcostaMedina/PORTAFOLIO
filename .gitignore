@@ -10,8 +10,13 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
+# testing & quality assurance (non-runtime)
 /coverage
+/tests/
+/scripts/
+
+# documentation (non-runtime)
+/docs/
 
 # next.js
 /.next/
