@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Project } from "@/data/projects";
 import { GithubIcon, ExternalLinkIcon } from "@/components/ui/icons";
-import { ArrowRight, Code, Server, CheckCircle2, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Code, Server, CheckCircle2 } from "lucide-react";
 
 interface ProjectCardProps {
   project: Project;

@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { PROFILE } from "@/data/profile";
-import { GithubIcon, ExternalLinkIcon } from "@/components/ui/icons";
-import { Mail, Copy, Check, Send, Sparkles } from "lucide-react";
+import { GithubIcon } from "@/components/ui/icons";
+import { Mail, Copy, Check, Send } from "lucide-react";
 
 export function ContactSection() {
   const [copied, setCopied] = useState(false);
@@ -98,20 +98,10 @@ export function ContactSection() {
               href={PROFILE.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--border-color)] bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent-primary)] transition-all"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[var(--border-color)] bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent-primary)] transition-all font-mono"
             >
               <GithubIcon className="w-4 h-4" />
               <span>github.com/LouguiAcostaMedina</span>
-            </a>
-
-            <a
-              href={PROFILE.previousPortfolio}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--border-color)] bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent-primary)] transition-all"
-            >
-              <ExternalLinkIcon className="w-4 h-4" />
-              <span>Portafolio Anterior (2025)</span>
             </a>
           </div>
         </div>

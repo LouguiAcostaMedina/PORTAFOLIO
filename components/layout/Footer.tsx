@@ -1,17 +1,8 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { PROFILE } from "@/data/profile";
 import { GithubIcon } from "@/components/ui/icons";
 
 export function Footer() {
-  const [year, setYear] = useState(2026);
-
-  useEffect(() => {
-    setYear(new Date().getFullYear());
-  }, []);
-
   return (
     <footer className="border-t border-[var(--border-color)] bg-[var(--bg-secondary)] py-12 transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -60,7 +51,7 @@ export function Footer() {
           >
             <GithubIcon className="w-3.5 h-3.5" />
           </a>
-          <span>© {year} • Desarrollado con Next.js & Tailwind</span>
+          <span>© 2026 • Desarrollado con Next.js & Tailwind</span>
         </div>
       </div>
     </footer>

@@ -1,42 +1,42 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore, useState, useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
 
-export function ThemeToggle() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
-  const [mounted, setMounted] = useState(false);
+const emptySubscribe = () => () => {};
 
+export function ThemeToggle() {
+  const isMounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
+
+  const [isDark, setIsDark] = useState<boolean>(true);
+
+  // Sincronizar el estado con el DOM al montar en el cliente
   useEffect(() => {
-    setMounted(true);
-    const stored = localStorage.getItem("portfolio-theme");
-    if (stored === "light" || stored === "dark") {
-      setTheme(stored);
-      if (stored === "dark") {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    } else {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const initial = prefersDark ? "dark" : "dark"; // Default to dark per design specs
-      setTheme(initial);
-      document.documentElement.classList.add("dark");
-    }
+    const hasDarkClass = document.documentElement.classList.contains("dark");
+    // Usar requestAnimationFrame para no bloquear el render sincrónico del efecto
+    const frame = requestAnimationFrame(() => {
+      setIsDark(hasDarkClass);
+    });
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   const toggleTheme = () => {
-    const nextTheme = theme === "dark" ? "light" : "dark";
-    setTheme(nextTheme);
-    localStorage.setItem("portfolio-theme", nextTheme);
-    if (nextTheme === "dark") {
+    const nextDark = !isDark;
+    setIsDark(nextDark);
+    if (nextDark) {
       document.documentElement.classList.add("dark");
+      localStorage.setItem("portfolio-theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("portfolio-theme", "light");
     }
   };
 
-  if (!mounted) {
+  if (!isMounted) {
     return (
       <button
         type="button"
@@ -54,10 +54,10 @@ export function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       className="w-9 h-9 rounded-lg border border-[var(--border-color)] bg-[var(--bg-card)] text-[var(--text-primary)] hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] transition-all flex items-center justify-center cursor-pointer shadow-xs"
-      aria-label={theme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
-      title={theme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+      aria-label={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+      title={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
     >
-      {theme === "dark" ? (
+      {isDark ? (
         <Sun className="w-4 h-4 text-[#F5F7FF] hover:text-[var(--accent-primary)] transition-colors" />
       ) : (
         <Moon className="w-4 h-4 text-[#0F172A] hover:text-[var(--accent-primary)] transition-colors" />

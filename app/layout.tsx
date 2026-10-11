@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_PE",
-    url: "https://acosta-portafolio-2025.vercel.app/",
+    url: "https://andreacosta-portfolio.vercel.app/",
     title: "Andre Acosta Medina | Software Developer",
     description:
       "Desarrollador de Software enfocado en aplicaciones web modernas, APIs REST, soluciones Full Stack y sistemas mantenibles.",
