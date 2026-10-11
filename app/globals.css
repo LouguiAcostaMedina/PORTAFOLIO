@@ -1,1 +1,99 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-canvas: var(--bg-primary);
+  --color-surface: var(--bg-secondary);
+  --color-card: var(--bg-card);
+  --color-border: var(--border-color);
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
+  --color-accent: var(--accent-primary);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-alt: var(--accent-secondary);
+}
+
+:root {
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #F1F5F9;
+  --bg-card: #FFFFFF;
+  --border-color: #E2E8F0;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --accent-primary: #0D9488;
+  --accent-hover: #0F766E;
+  --accent-secondary: #7C3AED;
+  --accent-glow: rgba(13, 148, 136, 0.12);
+  --badge-bg: #E6FFFA;
+  --badge-border: #99F6E4;
+  --badge-text: #0F766E;
+}
+
+.dark {
+  --bg-primary: #0B1020;
+  --bg-secondary: #131C2F;
+  --bg-card: #151F36;
+  --border-color: #23324E;
+  --text-primary: #F5F7FF;
+  --text-secondary: #AAB7CD;
+  --text-muted: #7E8DA5;
+  --accent-primary: #68E1DB;
+  --accent-hover: #4ED2CC;
+  --accent-secondary: #A78BFA;
+  --accent-glow: rgba(104, 225, 219, 0.18);
+  --badge-bg: rgba(104, 225, 219, 0.1);
+  --badge-border: rgba(104, 225, 219, 0.25);
+  --badge-text: #68E1DB;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  overflow-x: hidden;
+}
+
+/* Reducción de animaciones si el usuario lo solicita */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus accesible */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 3px;
+}
+
+/* Scrollbar sutil */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
