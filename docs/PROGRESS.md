@@ -10,7 +10,7 @@ Rama de trabajo: `feature/portfolio-redesign-acosta`
 | **Fase 0** | Comprobar workspace, git, auditoría de proyectos | **COMPLETADA** | Workspace vacío analizado, rama creada, `docs/PROJECT_AUDIT.md` redactado con datos reales. |
 | **Fase 1** | Inicialización Next.js, TS, Tailwind, ESLint, layout base | **COMPLETADA** | Next.js 16.4.0 (Turbopack), React 19, TypeScript 5, Tailwind CSS 4 y lucide-react inicializados. Build verificado con éxito (código de salida 0). |
 | **Fase 2** | Sistema de diseño, tokens, dark/light mode, header, hero | **COMPLETADA** | Tokens CSS semánticos, ThemeToggle con persistencia y sin FOUC, Header accesible y responsive, Hero editorial con copy oficial verificado y showcase técnico. Build 100% exitoso. |
-| **Fase 3** | Modelo de datos tipado, catálogo y tarjetas de proyectos | **PENDIENTE** | - |
+| **Fase 3** | Modelo de datos tipado, catálogo y tarjetas de proyectos | **COMPLETADA** | Modelo `Project` tipado en `data/projects.ts` con Kerigma y HIS UPeU publicados. FinaTrack reservado con `published: false` y oculto en catálogo. Tarjetas con enlaces independientes para Front/Back, badges y arquitectura. |
 | **Fase 4** | Estudios de caso dinámicos (Kerigma, HIS UPeU, guard 404 FinaTrack) | **PENDIENTE** | - |
 | **Fase 5** | Contenido complementario (Sobre mí, Stack, Proceso, Contacto, Footer) | **PENDIENTE** | - |
 | **Fase 6** | Mejoras UX/UI, animaciones, accesibilidad y responsive | **PENDIENTE** | - |
