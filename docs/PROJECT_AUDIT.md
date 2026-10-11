@@ -5,10 +5,8 @@ Entorno: Local / Windows / Node v22.16.0 / npm 11.5.2
 
 ## 1. Inspección de Fuentes Externas
 
-### Portafolio Anterior
-- **URL**: `https://acosta-portafolio-2025.vercel.app/`
-- **Estado**: Activo (HTTP 200).
-- **Diagnóstico**: Sitio estático HTML/CSS/JS con diseño genérico, partículas e imágenes de stock no auténticas. Se toma como referencia de partida para evolucionar hacia una arquitectura moderna en Next.js App Router con tipografía editorial, diseño responsivo, dark/light mode y enfoque de caso de estudio técnico.
+### Portafolio Anterior (Histórico)
+- **Diagnóstico**: Sitio estático previo basado en HTML/CSS/JS genérico con imágenes de stock. Reemplazado integralmente por la presente arquitectura en Next.js App Router con tipografía editorial, diseño responsivo, dark/light mode y enfoque de caso de estudio técnico.
 
 ---
 
