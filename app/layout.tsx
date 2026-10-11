@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 
 export const viewport: Viewport = {
   themeColor: [
@@ -85,6 +86,7 @@ export default function RootLayout({
         <main id="main-content" className="flex-1">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );
